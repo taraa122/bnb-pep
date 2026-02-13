@@ -105,7 +105,7 @@ These reduce solve times from 4+ hours to under 30 minutes on large instances.
 
 ```bash
 pip install cvxpy numpy scipy
-# Optional: pip install mosek (recommended for production)
+
 ```
 
 ```python
