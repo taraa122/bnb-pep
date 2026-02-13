@@ -1,6 +1,5 @@
 # BnB-PEP: Automated Algorithm Synthesis for Convex Optimization
 
-**2,300 lines of Python** | End-to-end system that automatically discovers and formally verifies optimal first-order optimization methods
 
 [![Tests](https://img.shields.io/badge/tests-13%2F13%20passing-brightgreen)]()
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)]()
@@ -143,20 +142,9 @@ print(f"Improvement over GD: {result.improvement_pct:.1f}%")
 - Taylor, Hendrickx, Glineur. *"Smooth Strongly Convex Interpolation and Exact Worst-Case Performance of First-Order Methods"* (2017) — interpolation constraints
 - Taylor, Hendrickx, Glineur. *"Performance Estimation Toolbox (PESTO)"* CDC 2017 — inner PEP framework
 
-Built from the papers, not forked from existing code.
+
 
 ---
 
-## Technical Details
 
-| Component | Lines | Key Complexity |
-|-----------|-------|----------------|
-| Gram matrix builder | ~300 | O(N²) constraint generation with 10K+ constraints for N≥5 |
-| Inner PEP solver | ~400 | Primal + dual SDP via cvxpy, warm-starting |
-| Outer BnB | ~500 | 3-stage pipeline with callback-driven search |
-| Function classes | ~350 | 4 classes with tight interpolation conditions |
-| DSL | ~200 | High-level API abstracting the full pipeline |
-| Performance utils | ~350 | Caching, deflation, scaling, sparsity analysis |
-| Tests | ~200 | 13 tests covering math correctness + integration |
-
-**Solver backends**: SCS (free, bundled), MOSEK (production-grade, academic license available), Gurobi (for Stage 3 global certification).
+**Solver backends**: SCS (free, bundled), MOSEK 
